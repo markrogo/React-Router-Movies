@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Route, Switch, useParams } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 
 import SavedList from './Movies/SavedList';
@@ -16,7 +16,7 @@ const App = () => {
         .get('http://localhost:5000/api/movies')
         .then(response => {
           setMovieList(response.data);
-          console.log(response.data);
+          console.log('heres the get ', response.data);
           console.log (movieList); // please explain why this doesn't work?!?
         })
         .catch(error => {
@@ -36,9 +36,9 @@ const App = () => {
       
       <Switch>
 
-         <Route exact path="/" render={(props) => {
-          return <MovieList movies={movieList} />
-        }} /> 
+         <Route exact path="/">
+            <MovieList movies={movieList} />
+        </Route> 
     
         <Route path="/movies/:id" component={Movie}>
            </Route>

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const Movie = (props) => {
   const [movie, setMovie] = useState();
+  const params = useParams();
  
   useEffect(() => {
     const id = 1;
@@ -18,7 +20,7 @@ const Movie = (props) => {
           console.error(error);
         });
 
-  },[]);
+  },[/* params.id */]);
   
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = evt => {
