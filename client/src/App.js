@@ -35,14 +35,11 @@ const App = () => {
       <SavedList list={[ /* This is stretch */]} />
       
       <Switch>
-
-         <Route exact path="/">
+        {/* keeping the routes straight */}
+        <Route exact path="/">
             <MovieList movies={movieList} />
         </Route> 
-    
-        <Route path="/movie/:id" component={Movie}>
-           </Route>
-
+        <Route path="/movie/:id" component={Movie} />
       </Switch>
     </div>
   );
