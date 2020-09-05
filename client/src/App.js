@@ -3,7 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 
 import SavedList from './Movies/SavedList';
-import MovieList from './Movies/MovieList'
+import MovieList from './Movies/MovieList';
+// import MovieCard from '.Movies/MovieCard'
 import Movie from './Movies/Movie'
 
 const App = () => {

@@ -1,28 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import MovieCard from './MovieCard';
 
 const MovieList = props => {
+  console.log (props);
   return (
     <div className="movie-list">
       {props.movies.map(movie => (
         <MovieDetails key={movie.id} movie={movie} />
+       
       ))}
     </div>
   );
 }
-
+// now MovieDetails just calls the MovieCard function (stretch)
 function MovieDetails({ movie }) {
   const { title, director, metascore } = movie;
   return (
     <div className="movie-card">
       <Link to={`/movie/${movie.id}`}>
-        <h2>{title}</h2>
-        <div className="movie-director">
-          Directed by: <em>{director}</em>
-        </div>
-        <div className="movie-metascore">
-          Metascore: <strong>{metascore}</strong>
-        </div>
+           <MovieCard movie={movie} />
       </Link>
     </div>
   );
